@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_101655) do
+ActiveRecord::Schema.define(version: 2020_10_02_092601) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname"
     t.string "first_name"
     t.string "last_name"
-    t.string "first_name_kane"
+    t.string "first_name_kana"
     t.string "last_name_kana"
     t.date "birth"
     t.string "email", default: "", null: false
