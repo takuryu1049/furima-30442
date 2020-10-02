@@ -66,7 +66,7 @@ category_idなどのようにカラム名を変更しましょう！！ -->
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | p_code           | string     | null: false                    |
-| prefecture_id   | integer    | null: false                    |
+| prefecture_id    | integer    | null: false                    |
 | cities           | string     | null: false                    |
 | address          | string     | null: false                    |
 | building_name    | string     |                                |
