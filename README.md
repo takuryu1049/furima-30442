@@ -22,22 +22,24 @@
 
 ## itemsテーブル
 
-| Column          | Type       | Options                         |
-| --------------- | ---------- | ------------------------------- |
-| name            | string     | null: false                     |
-| description     | text       | null: false                     |
-| category        | integer     | null: false                     |
-| status          | integer     | null: false                     |
-| delivery_burden | integer     | null: false                     |
-| shipment_source | integer     | null: false                     |
-| day_to_ship     | integer     | null: false                     |
-| price           | integer    | null: false,                    |
-| user            | references | null: false, foreign_key: true  |
+| Column             | Type       | Options                         |
+| ------------------ | ---------- | ------------------------------- |
+| name               | string     | null: false                     |
+| description        | text       | null: false                     |
+| category_id        | integer    | null: false                     |
+| status_id          | integer    | null: false                     |
+| delivery_burden_id | integer    | null: false                     |
+| shipment_source_id | integer    | null: false                     |
+| day_to_ship_id     | integer    | null: false                     |
+| price              | integer    | null: false,                    |
+| user               | references | null: false, foreign_key: true  |
 
 ### Association
 - belongs_to :user
 - has_one : order
-
+<!-- こちら後々のエラーの原因となってしまう可能性のあるため指摘させていただきます。
+active hashの導入時のカラム名は「_id」を語尾につけるかと思いますので
+category_idなどのようにカラム名を変更しましょう！！ -->
 <!-- ※imageカラムはActiveStorageで実装する為、テーブル設計内の記述に含めていません。 -->
 <!--category,status,delivery_burden,shipment_source,day_to_ship
 <!-- 上記の５つのカラムはActiveHashで実現する為integer型になっています。 -->
@@ -61,16 +63,19 @@
 
 ## delivery_addressテーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| p_code        | string     | null: false                    |
-| prefectures   | integer    | null: false                    |
-| cities        | string     | null: false                    |
-| address       | string     | null: false                    |
-| building_name | string     |                                |
-| phone_num     | string     | null: false                    |
-| order         | references | null: false, foreign_key: true |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| p_code           | string     | null: false                    |
+| prefectures_id   | integer    | null: false                    |
+| cities           | string     | null: false                    |
+| address          | string     | null: false                    |
+| building_name    | string     |                                |
+| phone_num        | string     | null: false                    |
+| order            | references | null: false, foreign_key: true |
 
+<!-- こちら後々のエラーの原因となってしまう可能性のあるため指摘させていただきます。
+active hashの導入時のカラム名は「_id」を語尾につけるかと思いますので
+prefecture_idなどのようにカラム名を変更しましょう！！ -->
 <!-- 都道府県のカラムはactive_hashで実装の予定のため、integer型にしましょう！ -->
 <!-- 電話番号はstring型で実装しましょう。
 integer型として保存すると整数型として保存されるため、先頭の0がDB上で省略された状態で保存されてしまうためです。 -->
