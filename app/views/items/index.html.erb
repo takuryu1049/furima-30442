@@ -180,10 +180,19 @@
   </div>
   <%# /商品一覧 %>
 </div>
-<div class='purchase-btn'>
-  <span class='purchase-btn-text'>出品する</span>
+<% if user_signed_in? %>
   <a href="/items/new">
-    <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <div class='purchase-btn'>
+      <span class='purchase-btn-text'>出品する</span>
+      <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    </div>
   </a>
-</div>
+<% else %>
+  <a href="/users/sign_in">
+    <div class='purchase-btn'>
+      <span class='purchase-btn-text'>出品する</span>
+      <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    </div>
+  </a>
+<% end %>
 <%= render "shared/footer" %>
