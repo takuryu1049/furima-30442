@@ -4,3 +4,4 @@ class DeliveryBurden < ActiveHash::Base
     { id: 2, delivery_burden: '着払い(購入者負担)' },
     { id: 3, delivery_burden: '送料込み(出品者負担)' }
   ]
+end

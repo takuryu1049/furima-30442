@@ -9,7 +9,7 @@ class Category < ActiveHash::Base
     { id: 7, category: 'おもちゃ・ホビー・グッズ' },
     { id: 8, category: '家電・スマホ・カメラ' },
     { id: 9, category: 'スポーツ・レジャー' },
-    { id: 10, category: 'ハンドメイド' }
+    { id: 10, category: 'ハンドメイド' },
     { id: 11, category: 'その他' }
   ]
 end
