@@ -1,6 +1,6 @@
 function calc() {
-  const price_input = document.getElementById("item-price")
-  const add_tax = document.getElementById("add-tax-price");//販売手数料
+  const price_input = document.getElementById("item-price");
+  const add_tax = document.getElementById("add-tax-price");
   const profit = document.getElementById("profit");
   price_input.addEventListener("input", () => {
     const the_price = price_input.value
