@@ -15,12 +15,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def calc
-    # price = (金額だけストロングで流す)
-    # fee = 金額*0.1で利益を計算する
-    # profit = price - fee
-    # render json: {fee:fee,profit:profit}
-  end
 
   private
 
