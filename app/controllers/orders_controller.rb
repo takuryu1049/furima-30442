@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_item
   before_action :move_to_index
+  before_action :sold_out_index
   
   def index
     @order_delivery_address = OrderDeliveryAddress.new
@@ -55,5 +56,11 @@ class OrdersController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+end
+
+def sold_out_index
+  if @item.order
+    redirect_to root_path
   end
 end
