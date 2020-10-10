@@ -6,20 +6,23 @@ class OrdersController < ApplicationController
   
   def create
     @order_delivery_address = OrderDeliveryAddress.new(order_delivery_address_params)
+    @item = Item.find(params[:item_id])
     if @order_delivery_address.valid?
+      pay_item
       @order_delivery_address.save
       redirect_to root_path
     else
-      @item = Item.find(params[:item_id])
       inti_value(@order_delivery_address)
       render :index
     end
   end
 
+  
+
   private
 
   def order_delivery_address_params
-    params.require(:order_delivery_address).permit(:p_code,:prefecture_id,:cities,:address,:building_name,:phone_num).merge(user_id: current_user.id, item_id: params[:item_id])
+    params.require(:order_delivery_address).permit(:p_code,:prefecture_id,:cities,:address,:building_name,:phone_num).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
 
   def inti_value(order_delivery_address)
@@ -31,5 +34,14 @@ class OrdersController < ApplicationController
     order_delivery_address.phone_num = ""
   end
   # ※冗長かもしれないが今まで習った範囲だとこれしかないと思う。user_idとitem_idは初期化やっていないためセキュリティ面大丈夫か？。
+
+  def pay_item
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp::Charge.create(
+      amount: @item.price,
+      card: order_delivery_address_params[:token],
+      currency: 'jpy'
+    )
+  end
 
 end
