@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   before_action :set_item
   before_action :move_to_index
   before_action :sold_out_index
-
   def index
     @order_delivery_address = OrderDeliveryAddress.new
   end
