@@ -59,7 +59,7 @@ category_idなどのようにカラム名を変更しましょう！！ -->
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has_one : delivery_address
+- has_one    :delivery_address
 
 ## delivery_addressテーブル
 
@@ -81,4 +81,4 @@ prefecture_idなどのようにカラム名を変更しましょう！！ -->
 integer型として保存すると整数型として保存されるため、先頭の0がDB上で省略された状態で保存されてしまうためです。 -->
 
 ### Association
-- belongs_to : order
+- belongs_to :order
