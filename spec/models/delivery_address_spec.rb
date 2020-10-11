@@ -5,12 +5,12 @@ RSpec.describe DeliveryAddress, type: :model do
     before do
       @delivery_address = FactoryBot.build(:delivery_address)
     end
-# orderアソシエーションのテスト⬇️
+    # orderアソシエーションのテスト⬇️
     it 'orderが紐づいてないと保存できない' do
       @delivery_address.order = nil
       @delivery_address.valid?
-      expect(@delivery_address.errors.full_messages).to include("Order must exist")
+      expect(@delivery_address.errors.full_messages).to include('Order must exist')
     end
-# orderアソシエーションのテスト⬆️
+    # orderアソシエーションのテスト⬆️
   end
 end
