@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
       @order_delivery_address.save
       redirect_to root_path
     else
-      inti_value(@order_delivery_address)
+      init_value(@order_delivery_address)
       render :index
     end
   end
@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
     params.require(:order_delivery_address).permit(:p_code, :prefecture_id, :cities, :address, :building_name, :phone_num).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
 
-  def inti_value(order_delivery_address)
+  def init_value(order_delivery_address)
     order_delivery_address.p_code = ''
     order_delivery_address.prefecture_id = 0
     order_delivery_address.cities = ''
