@@ -70,7 +70,9 @@ gem 'image_processing', '~> 1.2'
 
 gem 'payjp'
 
- gem "aws-sdk-s3", require: false
+gem "aws-sdk-s3", require: false
+
+gem "haml-rails", "~> 2.0"
 
 group :production do
   gem 'rails_12factor'
