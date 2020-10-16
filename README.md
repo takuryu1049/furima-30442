@@ -73,12 +73,16 @@ category_idなどのようにカラム名を変更しましょう！！ -->
 | phone_num        | string     | null: false                    |
 | order            | references | null: false, foreign_key: true |
 
+
+
+
+
 <!-- こちら後々のエラーの原因となってしまう可能性のあるため指摘させていただきます。
 active hashの導入時のカラム名は「_id」を語尾につけるかと思いますので
 prefecture_idなどのようにカラム名を変更しましょう！！ -->
 <!-- 都道府県のカラムはactive_hashで実装の予定のため、integer型にしましょう！ -->
 <!-- 電話番号はstring型で実装しましょう。
-integer型として保存すると整数型として保存されるため、先頭の0がDB上で省略された状態で保存されてしまうためです。 -->
+integer型として保存すると整数型として保存される為、先頭の0がDB上で省略された状態で保存されてしまうためです。 -->
 
 ### Association
 - belongs_to :order
