@@ -13,7 +13,8 @@
       - if user_signed_in?
         %li
           = icon("fas", "user-check")
-          = link_to "：#{current_user.nickname}さん", "#", class: "user-nickname"
+          ログイン中：
+          = link_to "#{current_user.nickname}さん", "#", class: "user-nickname"
         %li
           = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"
       - else
