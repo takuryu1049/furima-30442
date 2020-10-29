@@ -1,5 +1,5 @@
 # テーブル設計
-
+![Acell](https://user-images.githubusercontent.com/69346040/97516895-7bc36c80-19d7-11eb-8480-1973cbb370cd.png
 ## usersテーブル
 
 | Column          | Type      | Options     |
